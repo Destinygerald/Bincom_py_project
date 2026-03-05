@@ -6,6 +6,7 @@ asyncmy==0.2.11
 asyncpg==0.31.0
 click==8.1.8
 colorama==0.4.6
+cryptography>=41.0.0
 fastapi==0.115.12
 greenlet==3.3.2
 h11==0.16.0
