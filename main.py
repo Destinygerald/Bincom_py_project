@@ -34,11 +34,11 @@ async def load_dump(db: AsyncSession):
 async def check_tables(engine):
     def get_tables(sync_conn):
         insp = inspect(sync_conn)
-        return insp.get_table_names()
-    
+        return insp.get_table_names(schema=None)
+
     async with engine.connect() as conn:
         tables = await conn.run_sync(get_tables)
-        print(f"Visible tables: {tables}")
+        # print(f"Visible tables: {tables}")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
